@@ -3,7 +3,6 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "inter", sans-serif;
-    color: white;
 }
 
 :root{
@@ -13,10 +12,11 @@
 body{
     background-color: oklch(20.8% 0.042 265.755);
     font-size: 1.6rem;
+    color: #fff;
 }
 
 #page{
-    max-width: 1200px;
+    max-width: 120rem;
     margin-inline: auto;
 }
 
@@ -30,19 +30,81 @@ fieldset{
     border-radius: 1rem;
 }
 
-.informacoes-pessoais div{
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
+
+.informacoes-pessoais{
+    div{
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input{
+        margin-top: .7rem;
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+        border: none;
+        color: oklch(30.2% 0.056 229.695);
+    }
+
+    input:focus{
+    outline: 2px solid oklch(55.3% 0.013 58.071);
+    }
+
+    input::placeholder{
+        color: oklch(25.7% 0.09 281.288);
+    }
+
+    input[type=file]{
+        color: #fff;
+    }
 }
 
-.informacoes-pessoais input{
-    margin-top: .7rem;
-    padding: 1rem 1.5rem;
+.gostos-pessoais{
+    & > div {
+        margin-bottom: 1.5rem;
+    }
+
+    select{
+        padding: 1rem;
+        border-radius: 1rem;
+        border: none;
+        outline: none;
+    }
+    & > div:nth-of-type(5){
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        textarea{
+            max-width: 30rem;
+            border-radius: 1rem;
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+button{
+    padding: .4rem;
+    width: 10rem;
+    background-color: oklch(29.3% 0.066 243.157);
     border-radius: 1rem;
     border: none;
+    outline: 2px solid oklch(14.7% 0.004 49.25);
+    color: #fff;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.informacoes-pessoais input:focus{
-    outline: 2px solid oklch(55.3% 0.013 58.071);
+button:hover{
+    color: oklch(29.3% 0.066 243.157);
+    background-color: #fff;
+    transition: .7s;
+}
+
+@media(max-width: 768px){
+    body{
+        padding-inline: 1rem;
+    }
 }
